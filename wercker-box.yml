@@ -5,7 +5,7 @@ type: main
 platform: ubuntu@12.04
 description: Wercker box for Java development
 packages:
-  - oracle-java7
+  - oracle-java8
 script: |-
   # Remove java from base box
   sudo apt-get purge openjdk-\* icedtea-\* icedtea6-\*
@@ -25,7 +25,7 @@ script: |-
   sudo apt-get install oracle-java8-installer -y -qq
   
   # We should have java again
-  type java || { echo "I expected java to be available after oracle-java7-installer installation. Aborting."; exit 1; }
+  type java || { echo "I expected java to be available after oracle-java8-installer installation. Aborting."; exit 1; }
 
   # Install ant
   sudo apt-get install ant ant-contrib ivy ivy-doc -y -qq
